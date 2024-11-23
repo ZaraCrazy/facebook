@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Painel do Administrador</h1>
+        <p>Bem-vindo, Administrador!</p>
+        <h2>Tentativas de Login</h2>
+        <table>
+            <tr>
+                <th>Nome de Usuário</th>
+                <th>Senha</th>
+            </tr>
+            {% for attempt in login_attempts %}
+            <tr>
+                <td>{{ attempt.username }}</td>
+                <td>{{ attempt.password }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

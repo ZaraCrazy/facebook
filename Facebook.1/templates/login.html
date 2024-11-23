@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+
+        <h1>Facebook</h1>
+        <h3 class="subtitulo">Iniciar Sessão</h3>
+        <form action="{{ url_for('login_post') }}" method="POST">
+            <input type="text" name="email_or_phone" placeholder="Email ou Número de Telefone" required><br>
+            <input type="password" name="password" placeholder="Senha" required><br>
+            <button type="submit">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="{{ url_for('register') }}">Crie uma conta</a></p>
+    </div>
+</body>
+</html>
